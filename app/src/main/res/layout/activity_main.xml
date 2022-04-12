@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    tools:context=".MainActivity"
+    android:stretchColumns="*">
+
+    <TableRow
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:id="@+id/tvHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Vulcan Steel Trip Sheet: ID NUM TRIPSHEET"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnLoadData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LoadData" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spnDriver"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_bg"
+            android:contentDescription="@string/driver"
+            android:spinnerMode="dropdown" />
+
+
+    </TableRow>
+
+<!--    <TableRow-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="1dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:id="@+id/headerrow"-->
+
+<!--        android:background="#ffffff">-->
+
+<!--        <TextView-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_column="0"-->
+<!--        android:layout_margin="1dp"-->
+<!--        android:background="#FFFFFF"-->
+<!--        android:gravity="center"-->
+<!--        android:text=" W Order "-->
+<!--        android:textAppearance="?android:attr/textAppearanceLarge"-->
+<!--        android:textStyle="bold" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_column="1"-->
+<!--        android:layout_margin="1dp"-->
+<!--        android:background="#FFFFFF"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Del Note "-->
+<!--        android:textAppearance="?android:attr/textAppearanceLarge"-->
+<!--        android:textStyle="bold" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_column="2"-->
+<!--        android:layout_margin="1dp"-->
+<!--        android:background="#FFFFFF"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Company"-->
+<!--        android:textAppearance="?android:attr/textAppearanceLarge"-->
+<!--        android:textStyle="bold" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_weight="4"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_column="2"-->
+<!--        android:layout_margin="1dp"-->
+<!--        android:background="#FFFFFF"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Address"-->
+<!--        android:textAppearance="?android:attr/textAppearanceLarge"-->
+<!--        android:textStyle="bold" />-->
+
+
+<!--    <TextView-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_column="2"-->
+<!--        android:layout_margin="1dp"-->
+<!--        android:background="#FFFFFF"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Weight"-->
+<!--        android:textAppearance="?android:attr/textAppearanceLarge"-->
+<!--        android:textStyle="bold" />-->
+
+<!--    </TableRow>-->
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="570dp"
+        android:layout_margin="1dp"
+
+        android:background="#ffffff"
+        >
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="570dp"
+            android:layout_margin="0dp"
+
+
+
+            >
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewTripsheetlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/table_list_item" />
+
+        </HorizontalScrollView>
+<!--        <Button-->
+<!--            android:id="@+id/button1"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="top"-->
+<!--            android:background="@drawable/table_content_cell_bg"-->
+
+
+<!--            android:text="@string/button1"-->
+<!--            android:textSize="18sp" />-->
+
+
+
+
+<!--        <Button-->
+<!--            android:id="@+id/button2"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="top"-->
+<!--            android:background="@drawable/table_content_cell_bg"-->
+
+<!--            android:text="@string/button2"-->
+<!--            android:textSize="18sp" />-->
+<!--        <TextView-->
+<!--            android:id="@+id/tvdone"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@drawable/table_content_cell_bg"-->
+<!--            android:text="" />-->
+
+    </TableRow>
+
+
+
+
+
+
+
+
+    <TableRow
+        android:id="@+id/footerow"
+        android:background="#ffffff"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvTotaldelv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:text="Total: x Delivery Notes"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTotalweight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Total weight: # xkg"
+            android:textColor="#000000"
+            android:textSize="15sp" />
+    </TableRow>
+
+
+</TableLayout>

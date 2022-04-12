@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Tripsheet</string>
+    <string name="element_text">elementtext_string</string>
+    <string name="driver">drivers</string>
+    <string name="button1">DelDoneNoEx</string>
+    <string name="button2">DelDoneEx</string>
+    <string name="worder">W Order</string>
+    <string name="delnote">Del Note</string>
+    <string name="company">Company</string>
+    <string name="weight">Weight</string>
+
+
+</resources>

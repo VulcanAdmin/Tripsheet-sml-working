@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/txtWOrder"
+        android:layout_width="160dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@drawable/table_content_cell_bg"
+        android:text="@string/worder"
+        android:textSize="18sp"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/txtDElNote"
+        android:layout_width="190dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@drawable/table_content_cell_bg"
+        android:text="@string/delnote"
+        android:textSize="18sp"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/txtCompany"
+        android:layout_width="190dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@drawable/table_content_cell_bg"
+        android:text="@string/company"
+        android:textSize="18sp"
+        tools:ignore="TextContrastCheck" />
+
+
+    <Button
+        android:id="@+id/txtbutton1"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@drawable/table_content_cell_bg"
+        android:text="@string/button1"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/txtbutton2"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@drawable/table_content_cell_bg"
+        android:text="@string/button2"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txttvdone"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/table_content_cell_bg"
+        android:text="" />
+
+
+    <TextView
+        android:id="@+id/txtWeight"
+        android:layout_width="190dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@drawable/table_content_cell_bg"
+        android:text="@string/weight"
+        android:textSize="18sp"
+        tools:ignore="TextContrastCheck" />
+
+
+</LinearLayout>

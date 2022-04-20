@@ -1,5 +1,8 @@
 package com.dispatch.tripsheet
 
+class Tripsheetlist (val videos: List<DataModel>)
+
+
 class DataModel(
     var WOrder: Int,
     var DElNote: Int,

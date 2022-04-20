@@ -12,7 +12,7 @@ package com.dispatch.tripsheet
     import androidx.recyclerview.widget.RecyclerView
     import kotlinx.android.synthetic.main.table_list_item.view.*
 
-class TableViewAdapter( var Tripsheetlist: List<DataModel> = emptyList()) : RecyclerView.Adapter<TableViewAdapter.RowViewHolder>() {
+class TableViewAdapter( var Tripsheetlist: List<DataModel> ) : RecyclerView.Adapter<TableViewAdapter.RowViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowViewHolder {
@@ -74,12 +74,14 @@ class TableViewAdapter( var Tripsheetlist: List<DataModel> = emptyList()) : Recy
             }
         }
 
-
+println("This is your state")
+        println(Tripsheetlist[5].state)
 
         if ( rowPos  != 0){
             val modal =Tripsheetlist[rowPos -1 ]
             println("rowPos")
-println(rowPos)
+
+            println(rowPos)
             println(modal.state)
 
 
@@ -119,16 +121,6 @@ println(rowPos)
          val txtbutton1:Button = itemView.findViewById<Button>(R.id.txtbutton1)
          val txtbutton2:Button = itemView.findViewById<Button>(R.id.txtbutton2)
      }
-
-
-    //not used = same as RowView Holder
-//    class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-//
-//        var txtbutton1 = view.findViewById<Button>(R.id.txtbutton1)
-//        val txtbutton2:Button = itemView.findViewById<Button>(R.id.txtbutton2)
-//        var txttvdone = view.findViewById<TextView>(R.id.txttvdone)
-//    }
-
 
     private fun setHeaderBg(view: View) {
         view.setBackgroundResource(R.drawable.table_header_cell_bg)

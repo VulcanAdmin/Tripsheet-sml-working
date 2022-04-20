@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
         weightsum(tvTotalweight, Tripsheetlist)
         totaldelNotes(tvTotaldelv,Tripsheetlist)
-    //    setData(btnLoadData,Tripsheetlist)
+        setData(btnLoadData,Tripsheetlist)
         festchJson()
 
 
@@ -182,36 +182,31 @@ class MainActivity : AppCompatActivity() {
 
      }
 //setData is not used yet
-//    private fun setData(btnLoadData: Button, Tripsheetlist: ArrayList<DataModel>) {
-//
-//    // creating a new dbhandler class
-//    // and passing our context to it.
-// //   dbHandler = DBHandler(this@MainActivity)
-//
-////    var user : BackendlessUser
-//
-//
-//
-//    btnLoadData.setOnClickListener(View.OnClickListener {
-//var x: Int = 2
-//        for (i in 3..6)
-//        {       //does not work
-//            this.Tripsheetlist[x].WOrder  = 20022
-//            this.Tripsheetlist[x].DElNote  = 20022
-//            this.Tripsheetlist[x].Company     = "FNB"
-//            this.Tripsheetlist[x].Weight  = 20
-//            this.Tripsheetlist[x].Button1 = "No exceptions"
-//            this.Tripsheetlist[x].Button2 = "Exceptions"
-//            this.Tripsheetlist[x].tvdone = ""
-//            x++
-//        }
-//
-//        btnLoadData.setBackgroundColor(getColor(R.color.green))
-//
-//
-//    })
-//
-//    }
+    private fun setData(btnLoadData: Button, Tripsheetlist: ArrayList<DataModel>) {
+
+    // creating a new dbhandler class
+    // and passing our context to it.
+ //   dbHandler = DBHandler(this@MainActivity)
+
+//    var user : BackendlessUser
+
+
+
+    btnLoadData.setOnClickListener(View.OnClickListener {
+
+        for (i in 0 until Tripsheetlist.size -1) {
+
+                  when (  Tripsheetlist[i].tvdone) {
+
+                      "✓" -> println( "Success" + Tripsheetlist[i].WOrder )
+                      "x" -> println( "Failed" + Tripsheetlist[i].WOrder )
+                  }
+        }
+
+
+    })
+
+    }
 
 //works
     fun weightsum(args: TextView, Tripsheetlist: ArrayList<DataModel>) {

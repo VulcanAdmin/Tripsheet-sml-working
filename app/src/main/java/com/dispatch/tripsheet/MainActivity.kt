@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.table_list_item.*
 import okhttp3.*
 import java.io.IOException
 
@@ -111,14 +112,19 @@ class MainActivity : AppCompatActivity() {
 
         val spnDriver: Spinner = findViewById(R.id.spnDriver)
         var driver : String = ""
-        var Drivers : String = "driversname"
+        var Drivers : String = "driversname: "
         var item : String = ""
         var rowTot : Int = 10
 
         var adapter = ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item)
 
 
-            adapter.add(Drivers.toString())
+        for (i in 0 until 10){
+
+            adapter.add(Drivers.toString() + i )
+
+        }
+
 
         spnDriver.adapter = adapter
 
@@ -147,12 +153,25 @@ class MainActivity : AppCompatActivity() {
 
     val Tripsheetlist = ArrayList<DataModel>().apply {
 
-        add(DataModel(190617, 182832, "Jcorp", 100,"Delivery done", "Delivery not done",""))
-        add(DataModel(190617, 182833, "Honda", 100,"No exceptions", "Exceptions",""))
-        add(DataModel(190617, 182832, "Everflu", 100,"100%", "50%",""))
-        add(DataModel(190617, 182832, "Panado", 300,"OK", "NO",""))
-        add(DataModel(190617, 182832, "Gheiters", 100,"Success", "Failed",""))
-        add(DataModel(190617, 182832, "John", 300,"Yes", "No",""))
+        add(DataModel(190617, 182832, "Jcorp van der Heven", 100,"Delivery done", "Delivery not done",""))
+        add(DataModel(190618, 182833, "Honda", 100,"No exceptions", "Exceptions",""))
+        add(DataModel(190619, 182833, "Everflu", 100,"100%", "50%",""))
+        add(DataModel(190620, 182832, "Panado", 300,"OK", "NO",""))
+        add(DataModel(190621, 182833, "Gheiters", 100,"Success", "Failed",""))
+        add(DataModel(190622, 182832, "John", 300,"Yes", "No",""))
+        add(DataModel(190622, 182832, "John", 30,"Yes", "No",""))
+        add(DataModel(190623, 182833, "John", 30,"Yes", "No",""))
+        add(DataModel(190624, 182834, "John", 30,"Yes", "No",""))
+        add(DataModel(190625, 182834, "John", 30,"Yes", "No",""))
+        add(DataModel(190626, 182834, "John", 30,"Yes", "No",""))
+        add(DataModel(190627, 182834, "John", 30,"Yes", "No",""))
+        add(DataModel(190628, 182834, "John", 30,"Yes", "No",""))
+        add(DataModel(190629, 182834, "John", 30,"Yes", "No",""))
+        add(DataModel(190630, 182833, "John", 30,"Yes", "No",""))
+        add(DataModel(190632, 182832, "John", 30,"Yes", "No",""))
+        add(DataModel(190633, 182832, "John", 30,"Yes", "No",""))
+
+
 
     // need to change from hardcoded text to input
 //
@@ -194,12 +213,20 @@ class MainActivity : AppCompatActivity() {
 
     btnLoadData.setOnClickListener(View.OnClickListener {
 
-        for (i in 0 until Tripsheetlist.size -1) {
+        Toast.makeText(this@MainActivity, "Data uploaded", Toast.LENGTH_SHORT).show()
 
-                  when (  Tripsheetlist[i].tvdone) {
 
-                      "✓" -> println( "Success" + Tripsheetlist[i].WOrder )
-                      "x" -> println( "Failed" + Tripsheetlist[i].WOrder )
+        for (i in 0 until Tripsheetlist.size ) {
+
+            println(i)
+           // println( txttvdone.text)
+            println( Tripsheetlist[i].WOrder)
+                  when (  txttvdone.text) {
+// changes the textview not the tripsheet
+                      "1" -> println( "Success" + Tripsheetlist[i].WOrder )
+                      "2" -> println( "Failed" + Tripsheetlist[i].WOrder )
+
+                     // else  -> println( "noothing" + Tripsheetlist[i].WOrder )
                   }
         }
 

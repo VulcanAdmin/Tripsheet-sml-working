@@ -39,18 +39,18 @@ class TableViewAdapter( var Tripsheetlist: List<DataModel> ) : RecyclerView.Adap
                 setHeaderBg(txtDElNote)
                 setHeaderBg(txtCompany)
                 setHeaderBg(txtWeight)
-//               setHeaderBg(txtbutton1)
-//                setHeaderBg(txtbutton2)
-//                setHeaderBg(txttvdone)
+               setHeaderBg(txtbutton1)
+                setHeaderBg(txtbutton2)
+                setHeaderBg(txttvdone)
 
 
                 txtWOrder.text = "WOrder"
                 txtDElNote.text = "DElNote"
                 txtCompany.text = "Company"
                 txtWeight.text = "Weight"
-//                txtbutton1.text = "Delivered"
-//                txtbutton2.text = "Exception"
-//                txttvdone.text = ""
+                txtbutton1.text = "Delivered"
+                txtbutton2.text = "Exception"
+                txttvdone.text = "?"
             }
         } else {
             val modal = Tripsheetlist[rowPos  -1]
@@ -64,26 +64,51 @@ class TableViewAdapter( var Tripsheetlist: List<DataModel> ) : RecyclerView.Adap
                 setContentBg(txtbutton2)
                 setContentBg(txttvdone)
 
-                txtWOrder.text = modal.WOrder.toString()
-                txtDElNote.text = modal.DElNote.toString()
-                txtCompany.text = modal.Company.toString()
-                txtWeight.text = modal.Weight.toString()
-                txtbutton1.text = modal.Button1.toString()
-                txtbutton2.text = modal.Button2.toString()
-                txttvdone.text = modal.tvdone.toString()
+//                txtWOrder.text = modal.WOrder.toString()
+//                txtDElNote.text = modal.DElNote.toString()
+//                txtCompany.text = modal.Company.toString()
+//                txtWeight.text = modal.Weight.toString()
+//                txtbutton1.text = modal.Button1.toString()
+//                txtbutton2.text = modal.Button2.toString()
+//                txttvdone.text = modal.tvdone.toString()
+
+                if (modal.Weight.toString() == "100") {
+                    txtWOrder.text = modal.WOrder.toString()
+                    txtDElNote.text = modal.DElNote.toString()
+                    txtCompany.text = modal.Company.toString()
+                    txtWeight.text = modal.Weight.toString()
+                    txtbutton1.text = modal.Button1.toString()
+                    txtbutton2.text = modal.Button2.toString()
+                    txttvdone.text = modal.tvdone.toString()
+                }
+
             }
         }
 
-println("This is your state")
-        println(Tripsheetlist[5].state)
+//println("This is your state")
+//        println(Tripsheetlist[5].state)
 
         if ( rowPos  != 0){
             val modal =Tripsheetlist[rowPos -1 ]
-            println("rowPos")
+//            println("rowPos")
+//
+//            println(rowPos)
+//            println(modal.state)
 
-            println(rowPos)
-            println(modal.state)
+            holder.apply {
+                txtbutton1.setOnClickListener {
+                    Log.e("Clicked", "Successful delivery")
+                    //this is where I add code to export data through api
+                    modal.state = DataState.Success
+                    notifyDataSetChanged()
+                }
+                txtbutton2.setOnClickListener {
+                    Log.e("Clicked", "Exception on delivery")
 
+                    modal.state = DataState.Failure
+                    notifyDataSetChanged()
+                }
+            }
 
         holder.txttvdone.apply {
             setBackgroundResource(when (modal.state) { // tripsheet[4].state
@@ -99,20 +124,8 @@ println("This is your state")
             }
         }
 
-        holder.apply {
-            txtbutton1.setOnClickListener {
-                Log.e("Clicked", "Successful delivery")
-                //this is where I add code to export data through api
-                modal.state = DataState.Success
-                notifyDataSetChanged()
-            }
-            txtbutton2.setOnClickListener {
-                Log.e("Clicked", "Exception on delivery")
 
-                modal.state = DataState.Failure
-                notifyDataSetChanged()
-            }
-        }}
+        }
 
     }
      class RowViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){

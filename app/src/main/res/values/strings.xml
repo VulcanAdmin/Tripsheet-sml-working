@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tripsheet</string>
+    <string name="app_name">Tripsheettest</string>
     <string name="element_text">elementtext_string</string>
     <string name="driver">drivers</string>
     <string name="button1">DelDoneNoEx</string>
